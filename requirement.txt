@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+spacy
+azure-storage-blob
+azure-cosmos

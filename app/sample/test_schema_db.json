@@ -1,0 +1,36 @@
+{
+  "id": "doc-123",
+  "inserted_at": "2025-05-21T14:00:00Z",
+  "processed_at": "2025-05-21T14:05:00Z",
+  "date": "2025-05-18",
+  "title": "Global Leaders Discuss Climate Policy",
+  "content": "President Alice Johnson met with the World Health Organization to discuss the upcoming climate summit in Geneva.",
+  "url": "https://mystorage.blob.core.windows.net/container/doc-123.json",
+
+  "entities": [
+    {
+      "text": "Alice Johnson",
+      "label": "person",
+      "start": 10,
+      "end": 24
+    },
+    {
+      "text": "World Health Organization",
+      "label": "IGO",
+      "start": 39,
+      "end": 67
+    },
+    {
+      "text": "climate summit",
+      "label": "event",
+      "start": 90,
+      "end": 104
+    },
+    {
+      "text": "Geneva",
+      "label": "GPE",
+      "start": 108,
+      "end": 114
+    }
+  ]
+}
