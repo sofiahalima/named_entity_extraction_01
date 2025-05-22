@@ -47,7 +47,7 @@ def fetch_news_from_api():
 
 def setup_azure_blob():
     """Initialize Azure Blob Storage client"""
-    blob_service_client = BlobServiceClient.from_connection_string("DefaultEndpointsProtocol=https;AccountName=nerstoragehk;AccountKey=M4jwilD3D5BfZ00F0NG3hG48R6WpAJNrAtSjKcmjNG/MFKdAXUOAPrXTCAGJtwC96JDoD5OvHxMA+AStiOM8TA==;EndpointSuffix=core.windows.net")
+    blob_service_client = BlobServiceClient.from_connection_string(os.environ["AZURE_STORAGE_CONNECTION_STRING"])
     container_client = blob_service_client.get_container_client("bbc-news-json")
     try:
         container_client.create_container("bbc-news-json")
