@@ -25,7 +25,7 @@
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
 
 # .github/workflows/deploy.yml
-name: Deploy to Azure App Service
+name: Deploy to Azure Web App
 
 on:
   push:
@@ -37,19 +37,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ner-api-demo
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          app-name: ner-app-ser
           package: .
-
