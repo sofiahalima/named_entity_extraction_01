@@ -1,6 +1,6 @@
-# Named Entity Extraction Pipeline with spaCy + Azure
+# Named Entity Extraction Pipeline with NLP + Azure
 
-This project implements an end-to-end Named Entity Recognition (NER) pipeline using a fine-tuned spaCy model, Azure Blob Storage for document ingestion, Azure Cosmos DB for storage, and FastAPI for serving results via an API.
+This project implements an end-to-end Named Entity Recognition (NER) pipeline using a fine-tuned spaCy model & BERT Model, Azure Blob Storage for document ingestion, Azure Cosmos DB for storage, and FastAPI for serving results via an API, Azure App Services & Github Actions for deployment & scaling.
 
 ---
 
