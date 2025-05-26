@@ -1,31 +1,19 @@
 {
-  "id": "doc-123",
-  "title": "Global Leaders Discuss Climate Policy",
-  "content": "President Alice Johnson met with the World Health Organization to discuss the upcoming climate summit in Geneva.",
+  "id": "68500ec0-8500-419b-85a8-faedc0be2d4d",
+  "title": "Offshore oil operation near Santa Barbara resumes production after 10 years",
+  "content": "Sable Offshore Corp. has restarted offshore oil production 10 years after the operation was shuttered following a major oil spill along Santa Barbara's...",
   "entities": [
     {
-      "text": "Alice Johnson",
-      "label": "person",
-      "start": 10,
+      "text": "Sable Offshore Corp. has",
+      "label": "IGO",
+      "start": 0,
       "end": 24
     },
     {
-      "text": "World Health Organization",
-      "label": "IGO",
-      "start": 39,
-      "end": 67
-    },
-    {
-      "text": "climate summit",
-      "label": "event",
-      "start": 90,
-      "end": 104
-    },
-    {
-      "text": "Geneva",
-      "label": "GPE",
-      "start": 108,
-      "end": 114
+      "text": "Barbara",
+      "label": "PERSON",
+      "start": 142,
+      "end": 149
     }
   ]
 }

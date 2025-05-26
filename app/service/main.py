@@ -1,8 +1,9 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from app.service.db import container
 from azure.cosmos import exceptions
 
 from app.service.db import get_document_by_id
+from app.service.ner import extract_entities
 
 # schedule_app = func.FunctionApp()
 
@@ -34,3 +35,11 @@ def get_entities(id: str):
         }
     except exceptions.CosmosResourceNotFoundError:
         raise HTTPException(status_code=404, detail="Document not found")
+
+
+@app.post("/ner")
+def run_ner(text: str, use_bert: bool = Query(False, description="Use Hugging Face BERT NER")):
+    import os
+    os.environ["USE_BERT_NER"] = str(use_bert).lower()
+    entities = extract_entities(text)
+    return {"entities": entities}
