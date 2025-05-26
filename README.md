@@ -31,7 +31,7 @@ EntityExtractionDemo/
 ├── Dockerfile                # Docker config
 ├── requirements.txt          # Python dependencies
 ├── README.md                 # This file
-└── .github/workflows/ci.yml # GitHub Actions CI :TODO
+└── .github/workflows/deploy.yml # GitHub Actions CI : to azure App Service
 ```
 
 ---
@@ -87,7 +87,7 @@ Then open: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ---
 
-## 🐳 Docker Usage :TODO (planning to deploy to Azure App Services)
+## 🐳 Docker Usage :TODO (planned to deploy to Azure App Services)
 ```bash
 docker build -t ner-api .
 docker run -p 8000:8000 --env-file .env ner-api
@@ -96,8 +96,8 @@ docker run -p 8000:8000 --env-file .env ner-api
 ---
 
 ## ✅ GitHub Actions CI/CD
-- Located at `.github/workflows/ci.yml`  :TODO
-- Linting and dependency check on every `push` :TODO
+- Located at `.github/workflows/deploy.yml`  
+- Linting and dependency check on every `.github/workflows/lint.yml`
 
 ---
 
