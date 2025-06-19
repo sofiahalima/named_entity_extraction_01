@@ -14,9 +14,6 @@ from tenacity import retry, stop_after_attempt, wait_exponential
 from dotenv import load_dotenv
 import os
 
-# Load environment variables
-load_dotenv(dotenv_path="/Users/sofiahalima/PycharmProjects/EntityExtractionDemo/app/.env")
-
 
 
 def fetch_news_from_api():
