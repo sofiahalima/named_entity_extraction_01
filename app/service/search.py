@@ -15,7 +15,6 @@ def search_entities(
     end_date: str = Query(None, description="End date in YYYY-MM-DD format"),
     keyword: str = Query(None, description="Keyword to search in title or content")
 ):
-    # Build SQL query dynamically
     where_clauses = []
     if label:
         where_clauses.append("EXISTS (SELECT VALUE e FROM e IN c.entities WHERE e.label = @label)")
