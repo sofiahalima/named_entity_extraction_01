@@ -5,13 +5,14 @@ import json
 import os
 
 db = DocBin()
+project_root = os.environ.get("PROJECT_ROOT")
 
 # download the model ...RUN BELOW COMMAND
 # !python -m spacy download en_core_web_lg
 
 nlp=spacy.load('en_core_web_lg')
 
-file = open('/Users/sofiahalima/PycharmProjects/EntityExtractionDemo/data/annotations.json')
+file = open(f"{project_root}/data/annotations.json")
 training_data = json.load(file)
 
 for text,annotation in tqdm(training_data["annotations"]):
