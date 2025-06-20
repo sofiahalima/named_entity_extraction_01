@@ -20,13 +20,13 @@ EntityExtractionDemo/
 │   ├── service/
 │   │   ├── main.py           # FastAPI app
 │   │   ├── db.py             # Cosmos DB interaction
-│   │   ├── blob_loader.py    # Blob ingestion logic
+│   │   ├── data_collection_utility.py    # Blob ingestion logic
 │   │   ├── ner.py            # spaCy NER logic
 │   │   ├── search.py         # Search API
-│   │   └── models/           # Trained spaCy model
+│   │   |── run_pipeline.py   # Batch processor
 │   └── __init__.py
-├── pipeline/
-│   └── run_pipeline.py       # Batch processor
+├   |
+|   └── model/output         # Trained spaCy model
 ├── .env                      # Environment variables
 ├── Dockerfile                # Docker config
 ├── requirements.txt          # Python dependencies
@@ -40,8 +40,8 @@ EntityExtractionDemo/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/sofiahalima/EntityExtractionDemo.git
-cd EntityExtractionDemo
+git clone https://github.com/sofiahalima/named_entity_extraction_01.git
+cd named_entity_extraction_01
 ```
 
 ### 2. Create and Activate a Virtual Environment
@@ -63,6 +63,7 @@ COSMOS_DB_URL=your-cosmos-url
 COSMOS_DB_KEY=your-cosmos-key
 COSMOS_DB_NAME=ner_pipeline
 COSMOS_CONTAINER_NAME=documents
+PROJECT_ROOT = your root folder
 ```
 
 ---
@@ -102,7 +103,7 @@ docker run -p 8000:8000 --env-file .env ner-api
 ---
 
 ## 📌 Notes
-- Make sure your spaCy model is saved to `app/service/models/ner_model/`
+- Make sure your spaCy model is saved to `app/model/output/`
 - All folders contain `__init__.py` to ensure package resolution
 - Supports Cosmos DB SQL API only
 
